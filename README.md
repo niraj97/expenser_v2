@@ -139,6 +139,34 @@ flask db upgrade --sql
 5. Use meaningful migration messages
 6. Version control your migrations
 
+## Populating Sample Data
+
+The project includes a script to populate the database with sample data for testing and development purposes.
+
+1. Ensure your virtual environment is activated:
+```bash
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+2. Install the required package:
+```bash
+pip install requests
+```
+
+3. Run the population script:
+```bash
+python populate_db.py
+```
+
+This will create:
+- Three users (Alice, Bob, Charlie)
+- Five expense categories (Groceries, Entertainment, Utilities, Rent, Transportation)
+- Two groups (Roommates and Trip Group)
+- Sample personal expenses for Alice
+- Sample group expenses with equal splits
+
+The script provides detailed output of all created entities with their IDs and relationships.
+
 ## Environment Variables
 - `SECRET_KEY`: Secret key for JWT encoding
 - `DATABASE_URL`: Database connection URL (defaults to SQLite)
